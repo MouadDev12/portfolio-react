@@ -51,28 +51,7 @@ src/
 └── index.css
 ```
 
-## 🚀 Installation et Démarrage
 
-1. **Cloner le repository**
-```bash
-git clone [url-du-repo]
-cd portfolio-react
-```
-
-2. **Installer les dépendances**
-```bash
-npm install
-```
-
-3. **Démarrer le serveur de développement**
-```bash
-npm run dev
-```
-
-4. **Build pour la production**
-```bash
-npm run build
-```
 
 ## 🎨 Personnalisation
 
