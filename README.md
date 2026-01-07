@@ -1,4 +1,4 @@
-# Portfolio React - Mouad Mekrech
+# Portfolio React
 
 Un portfolio moderne et professionnel développé avec React, Vite et Framer Motion.
 
@@ -108,25 +108,3 @@ Le portfolio est entièrement responsive avec des breakpoints :
 - `npm run preview` - Prévisualisation du build
 - `npm run lint` - Vérification du code avec ESLint
 
-## 📄 Fonctionnalité PDF
-
-Le CV peut être téléchargé en PDF grâce à la librairie html2pdf.js. Le contenu du PDF est défini dans le composant `CVContent.jsx`.
-
-## 🌐 Déploiement
-
-Le projet peut être déployé sur :
-- **Vercel** : `vercel --prod`
-- **Netlify** : Glisser-déposer le dossier `dist`
-- **GitHub Pages** : Utiliser GitHub Actions
-
-## 📞 Contact
-
-- **Email** : mouadmekrech12@gmail.com
-- **LinkedIn** : [Mouad Mekrech](https://www.linkedin.com/in/mouad-mekrech-5b1057330/)
-- **GitHub** : [MouadDev12](https://github.com/MouadDev12)
-
-## 📝 Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.# portfolio-react
-# portfolio-react
-# portfolio-react
