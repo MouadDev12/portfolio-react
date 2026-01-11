@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import emailjs from 'emailjs-com'
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -16,6 +17,14 @@ const Contact = () => {
     consent: false
   })
 
+  const [isLoading, setIsLoading] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // null, 'success', 'error'
+
+  // Initialiser EmailJS avec votre clé publique
+  useEffect(() => {
+    emailjs.init("YOUR_PUBLIC_KEY") // Remplacez par votre clé publique
+  }, [])
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target
     setFormData(prev => ({
@@ -24,17 +33,53 @@ const Contact = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Merci pour votre message ! Je vous recontacterai très rapidement.')
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-      consent: false
-    })
+    
+    if (!formData.consent) {
+      alert("Veuillez accepter le consentement pour continuer")
+      return
+    }
+
+    setIsLoading(true)
+    setSubmitStatus(null)
+
+    try {
+      // Envoyer l'email via EmailJS
+      const result = await emailjs.send(
+        "YOUR_SERVICE_ID",     // Remplacez par votre SERVICE_ID
+        "YOUR_TEMPLATE_ID",    // Remplacez par votre TEMPLATE_ID
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "mouadmekrech12@gmail.com", // Email de destination
+          date: new Date().toLocaleDateString('fr-FR')
+        },
+        "YOUR_PUBLIC_KEY"      // Remplacez par votre PUBLIC_KEY
+      )
+
+      if (result.status === 200) {
+        setSubmitStatus('success')
+        alert("Message envoyé avec succès ✅")
+        
+        // Réinitialiser le formulaire
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          consent: false
+        })
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'envoi:", error)
+      setSubmitStatus('error')
+      alert("Erreur lors de l'envoi du message ❌")
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -179,10 +224,37 @@ const Contact = () => {
                   <label htmlFor="consent">J'accepte que mes données soient utilisées pour me recontacter</label>
                 </div>
 
-                <button type="submit" className="btn-contact">
-                  <i className="fas fa-paper-plane"></i>
-                  Envoyer le message
+                <button 
+                  type="submit" 
+                  className="btn-contact"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <>
+                      <i className="fas fa-spinner fa-spin"></i>
+                      Envoi en cours...
+                    </>
+                  ) : (
+                    <>
+                      <i className="fas fa-paper-plane"></i>
+                      Envoyer le message
+                    </>
+                  )}
                 </button>
+
+                {/* Message de statut */}
+                {submitStatus === 'success' && (
+                  <div className="status-message success">
+                    <i className="fas fa-check-circle"></i>
+                    Message envoyé avec succès !
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="status-message error">
+                    <i className="fas fa-exclamation-circle"></i>
+                    Erreur lors de l'envoi. Veuillez réessayer.
+                  </div>
+                )}
               </form>
             </motion.div>
           </div>

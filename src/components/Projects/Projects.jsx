@@ -12,42 +12,42 @@ const Projects = () => {
     {
       title: "📊Xreducation Dashboard",
       image: "/IMAGES/Xreducation Dashboard.png",
-      role: "Frontend Engineer /UI-UX",
+      role: "💻 Frontend Engineer /UI-UX",
       description: "Une plateforme d'administration éducative moderne développée, conçue pour gérer des cours, étudiants, revenus et statistiques dans un environnement clair.",
       technologies: ["HTML5", "CSS3", "TypeScript", "Figma", "Three.js"]
     },
     {
       title: "🍰SweetCake Patesserie artisanale",
       image: "/IMAGES/SweetCake Patesserie artisanale.png",
-      role: "React Frontend Developer",
+      role: "⚛️ React Frontend Developer",
       description: "SweetCake est une application e-commerce moderne permettant de présenter des produits de pâtisserie artisanale et de gérer un panier de commande dynamique.",
       technologies: ["React", "Vite", "Context API", "JavaScript", "HTML5", "CSS3", "Font Awesome", "Responsive Design"]
     },
     {
       title: "🍹Zest & Co. — Premium Drinks Website",
       image: "/IMAGES/Zest & Co. — Premium Drinks Website.png",
-      role: "UI Designer",
+      role: "🧑‍💻 Frontend Developer",
       description: "Zest & Co. est un site web moderne et interactif dédié à la présentation et à la vente de boissons artisanales premium.",
       technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Font Awesome — icônes", "Animations et transitions"]
     },
     {
       title: "🏆 CAN 2025 - Application Web",
       image: "/IMAGES/can2025.png",
-      role: "UI Designer",
+      role: "🎨 UI Designer",
       description: "Une application web moderne et responsive pour suivre la Coupe d'Afrique des Nations 2025 au Maroc.",
       technologies: ["React", "Redux Toolkit", "CSS3", "React Router DOM", "Responsive Design", "ESLint"]
     },
     {
       title: "📚 Gestionnaire de Bibliothèque Personnelle",
       image: "/IMAGES/gestion livre.png",
-      role: "UI Designer",
+      role: "🌐 Web App Frontend Developer",
       description: "Une application web moderne et intuitive pour gérer votre collection de livres.",
       technologies: ["React", "Redux Toolkit", "CSS3", "Responsive Design","Thème adaptatif", "Interface moderne"]
     },
     {
       title: "👟 Nike Store - Application E-commerce React",
       image: "/IMAGES/Nike Store.png",
-      role: "UI Designer",
+      role: "🛍️ E-commerce Frontend Developer",
       description: "Une plateforme e-commerce performante et évolutive dédiée à la vente de produits Nike.",
       technologies: ["React", "Redux Toolkit", "React Redux","Redux Slices",  "CSS3", "Responsive Design", "Testing Library", "API Mock"]
     }

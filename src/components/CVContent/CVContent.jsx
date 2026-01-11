@@ -2,14 +2,14 @@ import React from 'react'
 
 const CVContent = () => {
   return (
-    <div id="cvContent" style={{ display: 'none' }}>
+    <div id="cvContent" style={{ position: 'absolute', left: '-5000px', top: 0, width: '210mm', minHeight: '297mm', background: 'white', zIndex: -1 }}>
       <div className="cv-pdf">
         <div className="cv-header">
           <h1>Mouad Mekrech</h1>
           <h2>Développeur Web Full-Stack</h2>
           <p>Email: mouadmekrech12@gmail.com | Téléphone: +212 76 863 63 08 | Localisation: Agadir, Maroc</p>
         </div>
-        
+
         <div className="cv-section">
           <h3>Compétences Techniques</h3>
           <div className="cv-skills">
@@ -73,7 +73,7 @@ const CVContent = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="cv-section">
           <h3>Éducation</h3>
           <div className="cv-item">
